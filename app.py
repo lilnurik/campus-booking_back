@@ -82,7 +82,7 @@ def after_request(response):
     origin = request.headers.get('Origin', '')
 
     # Allow requests from listed origins
-    if origin in ['http://localhost:8081', 'http://localhost:3000', 'http://localhost:8080']:
+    if origin in ['http://localhost:8081', 'http://localhost:3000', 'http://localhost:8080', 'https://80.80.212.170']:
         # Only add headers if they don't exist already to avoid duplicates
         if 'Access-Control-Allow-Origin' not in response.headers:
             response.headers.add('Access-Control-Allow-Origin', origin)
@@ -1345,4 +1345,4 @@ def init_db():
 if __name__ == '__main__':
     # Initialize database before running app
     init_db()
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0', port=5321)
