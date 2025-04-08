@@ -27,7 +27,7 @@ jwt = JWTManager(app)
 # Apply a single, consistent CORS configuration
 CORS(app,
      resources={r"/*": {
-         "origins": ["http://localhost:8081", "http://localhost:3000", "http://localhost:8080"],
+         "origins": ["http://localhost:8081", "http://localhost:3000", "http://localhost:8080", "https://80.80.212.170"],
          "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
          "allow_headers": ["Content-Type", "Authorization", "Accept"]
      }},
